@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Admin Dashboard</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+
+        <div class="logo">
+            Admin Dashboard
+        </div>
+
+        <div class="menu">
+
+            <a href="/add-company">
+                Add Company
+            </a>
+
+            <a href="/logout">
+                Logout
+            </a>
+            <a href="/view-applications">
+                Applications
+            </a>
+
+        </div>
+
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+
+        <h1>All Companies</h1>
+
+        {% for company in companies %}
+
+        <div class="card">
+
+            <h2>{{ company[1] }}</h2>
+
+            <p>
+                <b>Role:</b> {{ company[2] }}
+            </p>
+
+            <p>
+                <b>Package:</b> {{ company[3] }}
+            </p>
+            <a href="/delete-company/{{ company[0] }}">
+
+                <button class="reject-btn">
+                    Delete
+                </button>
+
+            </a>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</body>
+</html>

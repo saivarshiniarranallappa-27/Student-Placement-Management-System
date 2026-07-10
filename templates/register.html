@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div class="navbar">
+
+        <div class="logo">
+            Student Placement Management System
+        </div>
+
+        <div class="menu">
+            <a href="/">Home</a>
+            <a href="/login">Login</a>
+            <a href="/register">Register</a>
+        </div>
+
+    </div>
+
+    <!-- Register Form -->
+    <div class="form-container">
+
+        <h2>Student Registration</h2>
+
+        <form method="POST" enctype="multipart/form-data">
+
+            <input type="text"
+                   name="name"
+                   placeholder="Enter Name"
+                   required>
+
+            <input type="email"
+                   name="email"
+                   placeholder="Enter Email"
+                   required>
+
+            <input type="password"
+                   name="password"
+                   placeholder="Enter Password"
+                   required>
+            <input type="file"
+                   name="resume"
+                   required>
+
+            <button type="submit">
+                Register
+            </button>
+
+        </form>
+
+    </div>
+
+</body>
+</html>
